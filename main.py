@@ -1,3 +1,5 @@
+# O(n^2) time \ O(1) space
+
 def bubbleSort(array):
     # Write your code here.
     swaps = True
