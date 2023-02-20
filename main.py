@@ -5,15 +5,22 @@ def bubbleSort(array):
     while swaps == True:
         swaps = False
         for ptr in range(len(array)-1):
-            next = ptr + 1
-            if array[ptr] > array[next]:
+            if array[ptr] > array[ptr + 1]:
                 swaps = True
-                # swap elements ptr and next
-                temp = array[ptr]
-                array[ptr] = array[next]
-                array[next] = temp
+                # swap elements ptr and ptr + 1
+                swap(ptr, ptr + 1, array)
+
     return array
     pass
+
+def swap(i, j, array):
+    array[i], array[j] = array[j], array[i]
+    
+    # this is a simpler way in Python of performing these statements:
+    #            temp = array[ptr]
+    #            array[ptr] = array[ptr + 1]
+    #            array[ptr + 1] = temp
+    # No 'return array' statement seems to be needed for this function
 
 if __name__ == '__main__':
 
